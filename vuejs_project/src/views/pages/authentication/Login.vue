@@ -213,24 +213,19 @@ export default {
              this.companyId = response.data.companyId
             this.userId = response.data.userId
 
-            console.log('before', response)
             if (response.status === 200) {
               // console.log("..",response.data)
-              console.log(response)
-              console.log(response.data.data.token)
               localStorage.setItem('token', response.data.data.token)
               // this.$cookies.set('token', response.data.data.token, '1h')
               localStorage.setItem('companyRole', response.data.data.companyRole)
               localStorage.setItem('systemRole', response.data.data.systemRole)
               localStorage.setItem('userId', response.data.data.userId)
                localStorage.setItem('companyId', response.data.data.companyId)
-              console.log('>>>', response.data)
               this.$toast.success('Login Successfully')
               this.$router.push('/dashboard')
             }
 
           }
-          console.log('After', response)
         })
         .catch(e => {
           this.e = 'please Enter Valid Data'

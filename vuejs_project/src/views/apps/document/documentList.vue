@@ -474,7 +474,6 @@ export default {
       })
           .then(response => {
             if (response?.data) {
-              console.log(' All data', response.data.data.data.content)
               this.tableData = response.data.data.data.content
               this.totalRecords = response.data.data.data.totalElements
               this.currentFolderId = response.data.data.currentFolderId
@@ -566,14 +565,12 @@ export default {
     },
     openEditFileModal(id, docType) {
       if (docType === 'file') {
-        console.log('before file data')
         getFileById({ id })
             .then(response => {
-              console.log('after file data')
               if (response?.data) {
                 this.fileDetails = response.data.data
                 this.showEditModal = true
-                console.log(this.fileDetails)
+
               }
             })
             .catch(e => {
@@ -589,7 +586,7 @@ export default {
               if (response?.data) {
                 this.folderDetails = response.data.data
                 this.showEditFolderModal = true
-                console.log(this.folderDetails)
+
               }
             })
             .catch(e => {
@@ -602,11 +599,11 @@ export default {
       if (docType === 'file') {
         getFileById({ id })
             .then(response => {
-              console.log('after file data')
+
               if (response?.data) {
                 this.fileDetails = response.data.data
                 this.showDeleteModal = true
-                console.log(this.fileDetails)
+
               }
             })
             .catch(e => {
@@ -622,7 +619,7 @@ export default {
               if (response?.data) {
                 this.folderDetails = response.data.data
                 this.showDeleteFolderModal = true
-                console.log(this.folderDetails)
+
               }
             })
             .catch(e => {

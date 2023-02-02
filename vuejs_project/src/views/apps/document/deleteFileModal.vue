@@ -65,7 +65,6 @@ export default {
           .then((response)=>{
             if(response){
               this.$emit('delete-modal')
-              console.log("data delete")
               this.$toast.success('File Deleted Successfully')
               this.$emit('close-modal')
 

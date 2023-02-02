@@ -525,7 +525,6 @@ export default {
       deleteMessage(this.messageId)
           .then((response) => {
             if (response) {
-              console.log('data delete')
               this.$toast.success('Message Deleted Successfully')
               this.showModal = false
               this.getAllMessage()
@@ -541,7 +540,6 @@ export default {
       this.viewFileDetails.fileId = fileDetails.fileId
       this.viewFileDetails.fileName = fileDetails.message
       const fileExtension = extractFileFormat(fileDetails.message)
-      console.log(fileDetails.message)
       if (this.displayImageFile.includes(fileExtension)) {
         this.viewFileDetails.isImageFile = true
         this.viewFileDetails.fileExtension = fileExtension

@@ -79,7 +79,7 @@ export default {
           .then((response)=>{
             if(response){
               this.$emit('update-folder-modal')
-              console.log("data updated",this.folderName)
+
               this.$toast.success(' Folder Updated Successfully')
               this.$emit('close-modal')
             }

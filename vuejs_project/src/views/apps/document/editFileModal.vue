@@ -80,7 +80,7 @@ export default {
           .then((response)=>{
             if(response){
               this.$emit('update-modal')
-              console.log("data updated",this.fileName)
+
               this.$toast.success('file Updated Successfully')
               this.$emit('close-modal')
 
